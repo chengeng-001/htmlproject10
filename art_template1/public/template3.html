@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="../js/template-web.js"></script>
+<script type="text/html" id="tpl">
+    <div>
+<!--        判断条件  -->
+        {{if name === '李四'}}
+        <span>姓名: {{name}}</span>
+        {{else}}
+        <span>年龄: {{age}}</span>
+        {{/if}}
+    </div>
+</script>
+<script>
+    var container = document.querySelector('#container');
+    var data = {
+        name: '李四1',
+        age: 20
+    }
+    //    引用模板
+    var html = template('tpl',data);
+    console.log(html);
+    container.innerHTML = html ;
+</script>
+</body>
+</html>

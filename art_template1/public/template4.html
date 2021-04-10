@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="../js/template-web.js"></script>
+<script type="text/html" id="tpl">
+    <div>
+        <ul>
+            <!--        循环  -->
+            {{each data}}
+                <li>
+                    <span>姓名: {{$value.name}}</span>
+                    <span>年龄: {{$value.age}}</span>
+                </li>
+            {{/each}}
+        </ul>
+
+    </div>
+</script>
+<script>
+    var container = document.querySelector('#container');
+    //    引用模板
+    var html = template('tpl', {
+        data : [{
+            name: '张三',
+            age: 18
+        },{
+            name: '李四',
+            age: 19
+        },{
+            name: '王五',
+            age: 20
+        }]
+
+    });
+    container.innerHTML = html ;
+</script>
+</body>
+</html>

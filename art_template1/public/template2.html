@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container"></div>
+<script src="../js/template-web.js"></script>
+<script type="text/html" id="tpl">
+    <div>
+<!--       @ 解析输出标签  -->
+        <span>姓名: {{@name}}</span>
+        <span>年龄: {{age}}</span>
+    </div>
+</script>
+<script>
+    var container = document.querySelector('#container');
+    var data = {
+        name: '<b>李四</b>',
+        age: 20
+    }
+    //    引用模板
+    var html = template('tpl',data);
+    console.log(html);
+    container.innerHTML = html ;
+</script>
+</body>
+</html>
